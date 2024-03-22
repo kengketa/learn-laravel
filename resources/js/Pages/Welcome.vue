@@ -1,8 +1,8 @@
 <template>
-    <div class="p-10 bg-red-500 w-screen h-screen">
+    <div class="p-10 bg-green-200 w-screen h-screen">
         <button
-            class="w-32 md:w-40 lg:w-60 xl:w-96 px-4 py-2 rounded-sm bg-pink-800 text-white transition transform duration-200 ease-in-out hover:scale-105">
-            sdhfgjdhgs
+            class="w-32 md:w-40 lg:w-60 xl:w-96 px-4 py-2 rounded-sm bg-green-800 text-white transition transform duration-200 ease-in-out hover:scale-105">
+            ทดสอบระบบ
         </button>
     </div>
 </template>
