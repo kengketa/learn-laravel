@@ -1,5 +1,22 @@
 <template>
-    <h1>Hello, world!</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger" role="alert">Hello, world!</div>
+            </div>
+        </div>
+        </div>
+
+  </body>
+</html>
 </template>
 
 <script>
