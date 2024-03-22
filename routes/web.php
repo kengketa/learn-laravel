@@ -23,6 +23,21 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/cherry', function () {
+    return Inertia::render('Cherry');
+});
+Route::get('/jed', function () {
+    return Inertia::render('Jed');
+});
+
+Route::get('/amnat', function () {
+    return Inertia::render('Amnat');
+});
+
+Route::get('/dod', function () {
+    return Inertia::render('Dod');
+});
+
 
 Route::middleware([
     'auth:sanctum',
