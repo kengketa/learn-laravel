@@ -1,10 +1,37 @@
 <template>
-    <div class="p-10 bg-green-200 w-screen h-screen">
-        <button
-            class="w-32 md:w-40 lg:w-60 xl:w-96 px-4 py-2 rounded-sm bg-green-800 text-white transition transform duration-200 ease-in-out hover:scale-105">
-            ทดสอบระบบ
-        </button>
+<div class="container">
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+      One of three columns
     </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+</div>
+
 </template>
 
 <script>
