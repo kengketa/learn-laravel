@@ -31,7 +31,7 @@ Route::get('/jed', function () {
 });
 
 Route::get('/amnat', function () {
-    return Inertia::render('Jed');
+    return Inertia::render('Amnat');
 });
 
 Route::get('/dod', function () {
