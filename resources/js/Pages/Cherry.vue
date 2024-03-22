@@ -1,45 +1,84 @@
 <template>
-    <div class="p-10 bg-green-200 w-screen h-screen">
-        <button
-            class="w-32 md:w-40 lg:w-60 xl:w-96 px-4 py-2 rounded-sm bg-green-800 text-white transition transform duration-200 ease-in-out hover:scale-105">
-            ทดสอบระบบ
-        </button>
+   <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </nav>
+
+
     </div>
+
+    <div>
+
+    </div>
+
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            ws: null,
-            connected: false,
-            receivedMessages: [],
-            messageToSend: ''
-        };
-    },
-    methods: {
-        connect() {
-            this.ws = new WebSocket('ws://localhost:6000');
-            this.ws.onopen = () => {
-                this.connected = true;
-                this.ws.onmessage = this.handleMessage;
-            };
-            this.ws.onclose = () => {
-                this.connected = false;
+    export default {
+        data() {
+            return {
+                ws: null,
+                connected: false,
+                receivedMessages: [],
+                messageToSend: ''
             };
         },
-        handleMessage(event) {
-            const message = event.data;
-            this.receivedMessages.push(message);
-        },
-        sendMessage() {
-            if (this.messageToSend.trim() !== '') {
-                this.ws.send(this.messageToSend);
-                this.messageToSend = '';
+        methods: {
+            connect() {
+                this.ws = new WebSocket('ws://localhost:6000');
+                this.ws.onopen = () => {
+                    this.connected = true;
+                    this.ws.onmessage = this.handleMessage;
+                };
+                this.ws.onclose = () => {
+                    this.connected = false;
+                };
+            },
+            handleMessage(event) {
+                const message = event.data;
+                this.receivedMessages.push(message);
+            },
+            sendMessage() {
+                if (this.messageToSend.trim() !== '') {
+                    this.ws.send(this.messageToSend);
+                    this.messageToSend = '';
+                }
             }
         }
-    }
-};
+    };
 </script>
 
 <style scoped>
