@@ -5,7 +5,7 @@
             sdhfgjdhgs
         </button>
     </div>
-</template>
+</templat
 
 <script>
 export default {
